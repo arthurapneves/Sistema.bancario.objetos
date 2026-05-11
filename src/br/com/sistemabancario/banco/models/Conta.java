@@ -1,22 +1,13 @@
-package br.com.sistemabancario.banco;
+package br.com.sistemabancario.banco.models;
 
-public class Base {
-    private int opcao = 0;
+public class Conta {
     private double saldo;
     private String dados;
-
-    public Base(String dados, double saldo) {
+    public Conta(String dados, double saldo) {
         this.dados = dados;
         this.saldo = saldo;
     }
 
-    public int getOpcao() {
-        return opcao;
-    }
-
-    public void setOpcao(int opcao) {
-        this.opcao = opcao;
-    }
 
     public double getSaldo() {
         return saldo;
@@ -39,7 +30,7 @@ public class Base {
 
     }
 
-   public void tranferir(double valor) {
+   public void transferir(double valor) {
         if (valor > saldo) {
             System.out.println("Saldo insuficiente. Digite um valor válido.");
         } else {
@@ -51,7 +42,9 @@ public class Base {
 
     public void exibirDados()
     {
-        System.out.println(dados);
+        System.out.println("Nome: " + dados);
+        System.out.println("Saldo: R$ " + saldo);
+
 
     }
 }
